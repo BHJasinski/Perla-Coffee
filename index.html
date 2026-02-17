@@ -10,11 +10,12 @@
     
     <style>
         :root {
-            --pudrowy-roz: rgba(252, 228, 236, 0.7);
-            --pastelowy-blekit: rgba(227, 242, 253, 0.7);
+            /* Zmiana kolorystyki na pastelowe błękity i miętę */
+            --pastelowy-blekit-jasny: rgba(224, 247, 250, 0.75);
+            --pastelowy-blekit-gleboki: rgba(178, 235, 242, 0.7);
             --mleczna-biel: rgba(255, 255, 255, 0.65);
             --zloto: #d4af37;
-            --tekst-ciemny: #455a64;
+            --tekst-ciemny: #37474f;
         }
 
         * { box-sizing: border-box; }
@@ -86,7 +87,6 @@
             text-align: center;
         }
 
-        /* STYL DLA CYTATU */
         .quote-text {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
@@ -130,12 +130,12 @@
             font-weight: 600;
             display: inline-block;
             margin-top: 20px;
-            border: 2px solid var(--pastelowy-blekit);
+            border: 2px solid var(--pastelowy-blekit-jasny);
             transition: 0.4s;
         }
 
         .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-        .menu-item { background: rgba(255, 255, 255, 0.4); padding: 15px; border-radius: 20px; border-bottom: 2px solid var(--pastelowy-blekit); }
+        .menu-item { background: rgba(255, 255, 255, 0.4); padding: 15px; border-radius: 20px; border-bottom: 2px solid var(--pastelowy-blekit-jasny); }
 
         footer { text-align: center; padding: 40px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3); font-size: 0.9rem; }
 
@@ -181,7 +181,7 @@
             </div>
         </section>
 
-        <section id="menu" class="glass-window" style="background: var(--pastelowy-blekit);">
+        <section id="menu" class="glass-window" style="background: var(--pastelowy-blekit-jasny);">
             <h2>Aksamitna Karta</h2>
             <div class="menu-grid">
                 <div class="menu-item"><strong>Różowa Latte</strong><br><small>Z nutą płatków róż</small></div>
@@ -192,7 +192,7 @@
             <a href="#kontakt" class="btn-pearl">Znajdź nas na mapie</a>
         </section>
 
-        <section id="kontakt" class="glass-window" style="background: var(--pudrowy-roz);">
+        <section id="kontakt" class="glass-window" style="background: var(--pastelowy-blekit-gleboki);">
             <h2>Zapraszamy do Perły</h2>
             <p><strong>ul. Sulejkowska 56/58, 04-157 Warszawa</strong></p>
             <p>Otwarte codziennie: 10:00 – 19:00</p>

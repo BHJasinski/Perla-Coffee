@@ -3,170 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perla Coffee | Twoja kawiarnia na Pradze</title>
+    <title>Perla Coffee | Baśniowa Przystań Kawy</title>
     
     <link rel="icon" href="flavperla.png" type="image/png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --perla-brown: #4e342e;
-            --perla-gold: #c6a664;
-            --perla-bg: #fffbf5;
-            --text-color: #2d2d2d;
-            --white: #ffffff;
-            --instagram-pink: #E1306C;
+            --pudrowy-roz: #fce4ec;
+            --pastelowy-blekit: #e3f2fd;
+            --mieta: #e0f2f1;
+            --mleczna-biel: #ffffff;
+            --zloto: #d4af37;
+            --tekst-szary: #546e7a;
+            --akcent-perlowy: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
         }
+
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--perla-bg);
-            color: var(--text-color);
+            background: linear-gradient(180deg, var(--mleczna-biel) 0%, var(--pastelowy-blekit) 50%, var(--pudrowy-roz) 100%);
+            color: var(--tekst-szary);
             margin: 0;
-            line-height: 1.8;
-            font-size: 18px;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* NAWIGACJA */
+        /* NAWIGACJA - LEKKA I PRZEZROCZYSTA */
         nav {
-            background: var(--white);
-            padding: 10px 20px;
+            padding: 20px 50px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            border-bottom: 2px solid var(--perla-gold);
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--pudrowy-roz);
         }
 
-        /* Logo dodane z Twojego pliku */
         .logo-nav {
-            height: 55px;
-            width: auto;
+            height: 70px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--perla-brown);
-            margin-left: 15px;
-            font-weight: 600;
-            padding: 10px;
+            color: var(--tekst-szary);
+            margin-left: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s;
         }
 
-        .nav-instagram {
-            color: var(--instagram-pink) !important;
-            border: 2px solid var(--instagram-pink);
-            border-radius: 8px;
-            padding: 5px 15px !important;
-        }
+        .nav-links a:hover { color: var(--zloto); }
 
-        /* SEKCJA HERO */
+        /* HERO - EMOCJONALNE POWITANIE */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1500');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
+            height: 85vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            color: var(--white);
+            padding: 20px;
+            background: radial-gradient(circle at center, var(--mieta) 0%, transparent 70%);
         }
 
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; }
-
-        /* SEKCJE */
-        .section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-        .section h2 { font-family: 'Playfair Display', serif; color: var(--perla-brown); font-size: 2.5rem; text-align: center; }
-        
-        .card { 
-            background: var(--white); 
-            padding: 30px; 
-            border-radius: 15px; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
-            margin-bottom: 20px; 
-            text-align: center;
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--zloto);
+            margin-bottom: 10px;
+            font-style: italic;
         }
 
-        /* NOWA SEKCJA INSTAGRAM */
-        .instagram-box {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            margin: 40px 0;
-        }
-
-        .btn-insta {
-            background: white;
-            color: var(--instagram-pink);
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+        .hero p {
             font-size: 1.2rem;
-            display: inline-block;
-            margin-top: 20px;
-            transition: 0.3s;
+            max-width: 600px;
+            color: var(--tekst-szary);
+            font-weight: 300;
         }
 
-        .btn-insta:hover { transform: scale(1.05); }
+        /* PRZYCISKI - MIĘKKIE I ZŁOTE */
+        .btn-gold {
+            background: var(--mleczna-biel);
+            color: var(--zloto);
+            padding: 15px 35px;
+            border: 2px solid var(--zloto);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.4s;
+            display: inline-block;
+        }
 
-        .footer { background: #332211; color: white; padding: 40px 20px; text-align: center; }
+        .btn-gold:hover {
+            background: var(--zloto);
+            color: white;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
 
-        @media (max-width: 600px) {
-            nav { flex-direction: column; }
-            .nav-links { margin-top: 10px; }
+        /* SEKCJE - ZAOKRĄGLONE KARTY */
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--zloto);
+            margin-bottom: 30px;
+        }
+
+        /* MENU - SENSORYCZNE */
+        .menu-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            padding: 20px;
+            border-radius: 25px;
+            background: var(--mleczna-biel);
+            transition: transform 0.3s;
+            border: 1px solid var(--pastelowy-blekit);
+        }
+
+        .menu-item:hover { transform: translateY(-5px); }
+
+        .menu-item h3 { font-family: 'Playfair Display', serif; color: var(--zloto); margin-bottom: 5px; }
+
+        /* INSTAGRAM - MAGICZNY GRADIENT */
+        .insta-section {
+            background: linear-gradient(45deg, var(--pudrowy-roz), var(--pastelowy-blekit));
+            border-radius: 50px;
+            padding: 60px;
+            text-align: center;
+            color: var(--tekst-szary);
+        }
+
+        /* STOPKA */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* FALUJĄCY ELEMENT (DEKORACJA) */
+        .wave-separator {
+            width: 100%;
+            height: 100px;
+            fill: var(--pastelowy-blekit);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { padding: 10px 20px; flex-direction: column; }
+            .nav-links { margin-top: 15px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <img src="Perla_logo.png" alt="Perla Coffee Logo" class="logo-nav">
+    <img src="Perla_logo.png" alt="Perla Coffee" class="logo-nav">
     <div class="nav-links">
-        <a href="#menu">Menu</a>
-        <a href="#kontakt">Kontakt</a>
-        <a href="TUTAJ_WKLEJ_LINK_DO_INSTAGRAMA" target="_blank" class="nav-instagram">Instagram</a>
+        <a href="#o-nas">Nasza Magia</a>
+        <a href="#menu">Aksamitne Smaki</a>
+        <a href="#kontakt">Przystań</a>
     </div>
 </nav>
 
 <header class="hero">
-    <div class="hero-content">
-        <h1>Perla Coffee</h1>
-        <p>Smak, który zostaje w pamięci.</p>
-    </div>
+    <h1>Perla Coffee</h1>
+    <p>Zanurz się w świecie, gdzie kawa smakuje harmonią, a każda filiżanka jest jak znaleziona na brzegu perła.</p>
+    <a href="#menu" class="btn-gold">Odkryj menu</a>
 </header>
 
-<section id="menu" class="section">
-    <h2>Nasze menu</h2>
-    <div class="card">
-        <p>Pyszna kawa specialty, świeże bajgle i domowe ciasta.</p>
-        <p><em>Kliknij w Instagram poniżej, aby zobaczyć dzisiejsze wypieki!</em></p>
-    </div>
-</section>
+<div class="container">
+    <section id="o-nas" class="glass-card">
+        <h2>Kawiarnia jak z bajki</h2>
+        <p>W sercu Pragi stworzyliśmy miejsce inspirowane spokojem oceanu i delikatnością pereł. Nasze aksamitne sofy zapraszają do odpoczynku, a zapach świeżo parzonej kawy otula niczym ciepły koc.</p>
+        <p><i>Slow coffee, slow life.</i></p>
+    </section>
 
-<section class="section">
-    <div class="instagram-box">
-        <h2>Zajrzyj do nas na Instagram!</h2>
-        <p>Śledź nasze codzienne relacje, nowości w menu i poczuj klimat Perły jeszcze przed wejściem.</p>
-        <a href="TUTAJ_WKLEJ_LINK_DO_INSTAGRAMA" target="_blank" class="btn-insta">Obserwuj @perlacoffee</a>
-    </div>
-</section>
+    <section id="menu">
+        <h2 style="text-align: center;">Nasze Klejnoty</h2>
+        <div class="menu-list">
+            <div class="menu-item">
+                <h3>Różowa Latte</h3>
+                <p>Delikatna, z nutą róży i aksamitną pianką.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Bajgiel Perłowy</h3>
+                <p>Z kremowym serek i dodatkami, które kochasz.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Sernik Miętowy</h3>
+                <p>Lekki jak morska bryza, rozpływający się w ustach.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="kontakt" class="section">
-    <h2>Zapraszamy</h2>
-    <div class="card">
-        <p><strong>Sulejkowska 56/58, Warszawa</strong></p>
-        <p>Pn - Pt: 8:00 - 19:00 | Sb - Nd: 9:00 - 19:00</p>
-    </div>
-</section>
+    <section class="insta-section" style="margin-top: 80px;">
+        <h2>Zostań częścią naszej baśni</h2>
+        <p>Śledź nasze estetyczne momenty na Instagramie</p>
+        <a href="TU_WKLEJ_LINK" target="_blank" class="btn-gold" style="border-color: white; background: white;">Obserwuj nas</a>
+    </section>
 
-<footer class="footer">
-    <p>© 2026 Perla Coffee Warszawa</p>
+    <section id="kontakt" class="glass-card" style="margin-top: 80px;">
+        <h2>Odwiedź naszą przystań</h2>
+        <p>ul. Sulejkowska 56/58, Warszawa</p>
+        <p>Czekamy na Ciebie w oazie spokoju.</p>
+        <p><strong>Pn - Nd: 10:00 - 19:00</strong></p>
+    </section>
+</div>
+
+<footer>
+    <p>© 2026 Perla Coffee | Stworzone z miłości do piękna i kawy.</p>
 </footer>
 
 </body>

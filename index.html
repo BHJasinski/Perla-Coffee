@@ -105,9 +105,8 @@
             text-align: center;
         }
 
-        /* STYL DLA ZDJĘCIA WNĘTRZA */
         .photo-window {
-            padding: 15px; /* Obramowanie wokół zdjęcia */
+            padding: 15px;
             line-height: 0;
             overflow: hidden;
         }
@@ -149,7 +148,6 @@
         .item-price { font-weight: 700; }
         .item-desc { font-size: 0.85rem; font-weight: 300; font-style: italic; color: #546e7a; margin-bottom: 15px; display: block; }
 
-        /* WSZYSTKIE GUZIKI PASTELOWO BŁĘKITNE */
         .btn-ocean {
             background: var(--accent-cyan);
             color: white;
@@ -166,8 +164,23 @@
 
         .btn-ocean:hover {
             transform: scale(1.05);
-            background: #26c6da; /* Nieco ciemniejszy błękit na hover */
+            background: #26c6da;
             color: white;
+        }
+
+        /* STYL DLA MUSZLI NA KOŃCU */
+        .shell-footer {
+            max-width: 150px;
+            width: 40%;
+            margin: 20px auto 0 auto;
+            opacity: 0.8;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .shell-footer img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
         }
 
         footer {
@@ -183,6 +196,7 @@
             .quote-text { font-size: 1.4rem; }
             .nav-links a { margin: 0 8px; font-size: 0.65rem; }
             .floating-logo { max-width: 200px; }
+            .shell-footer { max-width: 100px; }
         }
     </style>
 </head>
@@ -290,6 +304,10 @@
                 <a href="https://www.instagram.com/perl.acoffee/" target="_blank" style="color: var(--deep-blue); font-weight: 700; text-decoration: none;">Instagram @perlacoffee</a>
             </div>
         </section>
+
+        <div class="shell-footer">
+            <img src="muszla.png" alt="Perła w muszli">
+        </div>
 
         <footer>
             <p>© 2026 Perla Coffee | Magia na Pradze</p>

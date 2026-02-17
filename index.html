@@ -170,11 +170,12 @@
 
         /* STYL DLA MUSZLI NA KOŃCU */
         .shell-footer {
-            max-width: 150px;
-            width: 40%;
+            width: 100%;
+            max-width: 500px; /* Maksymalna szerokość na komputerze */
             margin: 20px auto 0 auto;
-            opacity: 0.8;
+            opacity: 0.9;
             animation: float 5s ease-in-out infinite;
+            line-height: 0;
         }
 
         .shell-footer img {
@@ -196,7 +197,11 @@
             .quote-text { font-size: 1.4rem; }
             .nav-links a { margin: 0 8px; font-size: 0.65rem; }
             .floating-logo { max-width: 200px; }
-            .shell-footer { max-width: 100px; }
+            /* Muszla na cały ekran na telefonie */
+            .shell-footer { 
+                max-width: 100%; 
+                margin: 10px 0 0 0;
+            }
         }
     </style>
 </head>

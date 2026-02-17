@@ -15,6 +15,7 @@
             --mleczna-biel: rgba(255, 255, 255, 0.65);
             --zloto: #d4af37;
             --tekst-ciemny: #455a64;
+            --nawigacja-akcent: #5c8d89; /* Delikatna morska zieleń dla nawigacji */
         }
 
         * { box-sizing: border-box; }
@@ -34,11 +35,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('tłoperla.png'); /* Twoje zdjęcie */
+            background-image: url('tłoperla.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            z-index: -1; /* Tło pod spodem */
+            z-index: -1;
         }
 
         /* NAWIGACJA SZKLANA */
@@ -85,14 +86,9 @@
             padding: 60px;
             max-width: 800px;
             width: 100%;
-            margin-bottom: 150px; /* Duży odstęp, by widzieć tło */
+            margin-bottom: 150px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .glass-window:hover {
-            transform: translateY(-5px);
         }
 
         h1, h2 {
@@ -103,8 +99,6 @@
 
         h1 { font-size: 3.5rem; font-style: italic; }
         h2 { font-size: 2.5rem; }
-
-        p { font-size: 1.1rem; line-height: 1.8; font-weight: 300; }
 
         .btn-pearl {
             background: white;
@@ -124,7 +118,28 @@
             color: white;
         }
 
-        /* MENU GRID W OKIENKU */
+        /* NOWOCZESNY PRZYCISK MAPY */
+        .btn-navigacja {
+            background: var(--mleczna-biel);
+            color: var(--tekst-ciemny);
+            padding: 20px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 30px;
+            border: 2px solid var(--pastelowy-blekit);
+            backdrop-filter: blur(5px);
+            transition: all 0.4s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .btn-navigacja:hover {
+            background: var(--pastelowy-blekit);
+            transform: scale(1.03);
+            border-color: var(--zloto);
+        }
+
         .menu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -139,14 +154,8 @@
             border-bottom: 2px solid var(--pastelowy-blekit);
         }
 
-        footer {
-            color: white;
-            text-align: center;
-            padding: 40px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
+        footer { text-align: center; padding: 40px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 
-        /* RESPONSYWNOŚĆ */
         @media (max-width: 768px) {
             .glass-window { padding: 30px; border-radius: 30px; }
             h1 { font-size: 2.2rem; }
@@ -172,40 +181,37 @@
         <section class="glass-window">
             <h1>Perla Coffee</h1>
             <p>Poczuj spokój oceanu w samym sercu miasta. Zapraszamy do kawiarni, gdzie każda filiżanka jest celebrowana w rytmie slow.</p>
-            <a href="#menu" class="btn-pearl">Zobacz nasze specjały</a>
+            <a href="#menu" class="btn-pearl">Odkryj nasze smaki</a>
         </section>
 
         <section id="o-nas" class="glass-window" style="background: var(--pudrowy-roz);">
             <h2>Magiczne Wnętrze</h2>
             <p>Zanurz się w naszych aksamitnych sofach. To miejsce stworzone dla estetów, marzycieli i miłośników najlepszej kawy specialty.</p>
-            <p><i>Kojące kolory, zapach świeżych wypieków i Ty.</i></p>
         </section>
 
         <section id="menu" class="glass-window" style="background: var(--pastelowy-blekit);">
             <h2>Aksamitna Karta</h2>
             <div class="menu-grid">
-                <div class="menu-item">
-                    <strong>Różowa Latte</strong><br><small>Z nutą płatków róż</small>
-                </div>
-                <div class="menu-item">
-                    <strong>Bajgiel Syreny</strong><br><small>Z kremowym serkiem i łososiem</small>
-                </div>
-                <div class="menu-item">
-                    <strong>Perłowe Cappuccino</strong><br><small>Klasyka w najlepszym wydaniu</small>
-                </div>
-                <div class="menu-item">
-                    <strong>Sernik Miętowy</strong><br><small>Lekki i orzeźwiający</small>
-                </div>
+                <div class="menu-item"><strong>Różowa Latte</strong><br><small>Z nutą płatków róż</small></div>
+                <div class="menu-item"><strong>Bajgiel Syreny</strong><br><small>Z łososiem i serek kremowym</small></div>
+                <div class="menu-item"><strong>Perłowe Cappuccino</strong><br><small>Klasyka w najlepszym wydaniu</small></div>
+                <div class="menu-item"><strong>Sernik Miętowy</strong><br><small>Lekki jak morska bryza</small></div>
             </div>
         </section>
 
         <section id="kontakt" class="glass-window">
-            <h2>Odwiedź naszą perłę</h2>
-            <p>ul. Sulejkowska 56/58, Warszawa</p>
-            <p><strong>Otwarte codziennie: 10:00 – 19:00</strong></p>
-            <hr style="border: 0; border-top: 1px solid var(--zloto); margin: 30px 0;">
-            <p>Śledź nasz baśniowy świat:</p>
-            <a href="https://www.instagram.com/perl.acoffee/" target="_blank" class="btn-pearl" style="background: var(--zloto); color: white;">Instagram @perla_coffee</a>
+            <h2>Zapraszamy do Perły</h2>
+            <p><strong>ul. Sulejkowska 56/58, 04-157 Warszawa</strong></p>
+            <p>Otwarte codziennie: 10:00 – 19:00</p>
+            
+            <a href="https://maps.google.com/?cid=9598387070563064631&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" target="_blank" class="btn-navigacja">
+                📍 Prowadź do nas (Google Maps)
+            </a>
+
+            <div style="margin-top: 40px; opacity: 0.8;">
+                <p>Śledź nasz świat:</p>
+                <a href="TU_WKLEJ_LINK_DO_INSTAGRAMA" target="_blank" class="btn-pearl">Instagram @perlacoffee</a>
+            </div>
         </section>
 
         <footer>

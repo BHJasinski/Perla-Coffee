@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perla Coffee | Twoja kawiarnia na Pradze</title>
+    
+    <link rel="icon" href="flavperla.png" type="image/png">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* DEFINICJE KOLORÓW I STYLU */
         :root {
             --perla-brown: #4e342e;
             --perla-gold: #c6a664;
             --perla-bg: #fffbf5;
             --text-color: #2d2d2d;
             --white: #ffffff;
+            --instagram-pink: #E1306C;
         }
 
         body {
@@ -22,36 +25,50 @@
             color: var(--text-color);
             margin: 0;
             line-height: 1.8;
-            font-size: 18px; /* Większa czcionka dla lepszej czytelności */
+            font-size: 18px;
         }
 
         /* NAWIGACJA */
         nav {
             background: var(--white);
-            padding: 15px 0;
-            text-align: center;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             border-bottom: 2px solid var(--perla-gold);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--perla-brown);
-            margin: 0 15px;
-            font-weight: 600;
-            padding: 10px; /* Duży obszar klikalny */
-            display: inline-block;
+        /* Logo dodane z Twojego pliku */
+        .logo-nav {
+            height: 55px;
+            width: auto;
         }
 
-        /* SEKCJA HERO (POWITANIE) */
+        .nav-links a {
+            text-decoration: none;
+            color: var(--perla-brown);
+            margin-left: 15px;
+            font-weight: 600;
+            padding: 10px;
+        }
+
+        .nav-instagram {
+            color: var(--instagram-pink) !important;
+            border: 2px solid var(--instagram-pink);
+            border-radius: 8px;
+            padding: 5px 15px !important;
+        }
+
+        /* SEKCJA HERO */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=1500'); /* Zdjęcie kawiarni */
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1500');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -59,167 +76,97 @@
             color: var(--white);
         }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; }
+
+        /* SEKCJE */
+        .section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+        .section h2 { font-family: 'Playfair Display', serif; color: var(--perla-brown); font-size: 2.5rem; text-align: center; }
+        
+        .card { 
+            background: var(--white); 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+            margin-bottom: 20px; 
+            text-align: center;
         }
 
-        .btn {
-            background-color: var(--perla-gold);
-            color: var(--white);
-            padding: 20px 40px;
+        /* NOWA SEKCJA INSTAGRAM */
+        .instagram-box {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .btn-insta {
+            background: white;
+            color: var(--instagram-pink);
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             font-size: 1.2rem;
             display: inline-block;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            background-color: var(--perla-brown);
-        }
-
-        /* SEKCJE GŁÓWNE */
-        .section {
-            padding: 80px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .section h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--perla-brown);
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-
-        /* MENU - CZYTELNE I PROSTE */
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px dashed var(--perla-gold);
-            padding: 10px 0;
-            font-weight: 500;
-        }
-
-        /* OPINIE Z GOOGLE */
-        .reviews {
-            background: var(--perla-brown);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .review-text {
-            font-style: italic;
-            font-size: 1.4rem;
-            max-width: 700px;
-            margin: 20px auto;
-        }
-
-        /* KONTAKT I MAPA */
-        .footer {
-            background: #eee;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        iframe {
-            width: 100%;
-            height: 300px;
-            border-radius: 15px;
-            border: none;
             margin-top: 20px;
+            transition: 0.3s;
         }
 
-        /* RESPONSYWNOŚĆ - ABY NA TELEFONIE TEŻ BYŁO DOBRZE */
+        .btn-insta:hover { transform: scale(1.05); }
+
+        .footer { background: #332211; color: white; padding: 40px 20px; text-align: center; }
+
         @media (max-width: 600px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .section h2 { font-size: 1.8rem; }
+            nav { flex-direction: column; }
+            .nav-links { margin-top: 10px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#o-nas">O nas</a>
-    <a href="#menu">Menu</a>
-    <a href="#opinie">Opinie</a>
-    <a href="#kontakt">Kontakt</a>
+    <img src="Perla_logo.png" alt="Perla Coffee Logo" class="logo-nav">
+    <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="TUTAJ_WKLEJ_LINK_DO_INSTAGRAMA" target="_blank" class="nav-instagram">Instagram</a>
+    </div>
 </nav>
 
 <header class="hero">
     <div class="hero-content">
         <h1>Perla Coffee</h1>
-        <p style="font-size: 1.5rem; margin-bottom: 30px;">Twoja codzienna chwila przyjemności na Pradze.</p>
-        <a href="#menu" class="btn">Zobacz co pysznego mamy!</a>
+        <p>Smak, który zostaje w pamięci.</p>
     </div>
 </header>
 
-<section id="o-nas" class="section">
-    <h2>Dlaczego jesteśmy "Perłą"?</h2>
-    <div class="card">
-        <p>Perla Coffee powstała z pasji do rzemieślniczej kawy i domowej atmosfery. Na warszawskiej Pradze stworzyliśmy miejsce, gdzie czas zwalnia. Nasi goście cenią nas za <strong>autentyczność</strong>, <strong>świeżo wypiekane ciasta</strong> i bajgle, które stały się legendą osiedla.</p>
-        <p>Wpadnij do nas z książką, laptopem lub psem – u nas każdy czuje się jak w domu.</p>
-    </div>
-</section>
-
 <section id="menu" class="section">
-    <h2>Nasze Specjały</h2>
-    <div class="menu-grid">
-        <div class="card">
-            <h3>Kawa & Napoje</h3>
-            <div class="menu-item"><span>Espresso</span> <span>9 zł</span></div>
-            <div class="menu-item"><span>Flat White</span> <span>16 zł</span></div>
-            <div class="menu-item"><span>Drip (Specialty)</span> <span>18 zł</span></div>
-        </div>
-        <div class="card">
-            <h3>Coś na ząb</h3>
-            <div class="menu-item"><span>Bajgiel z łososiem</span> <span>24 zł</span></div>
-            <div class="menu-item"><span>Sernik domowy</span> <span>17 zł</span></div>
-            <div class="menu-item"><span>Śniadanie Perła</span> <span>32 zł</span></div>
-        </div>
+    <h2>Nasze menu</h2>
+    <div class="card">
+        <p>Pyszna kawa specialty, świeże bajgle i domowe ciasta.</p>
+        <p><em>Kliknij w Instagram poniżej, aby zobaczyć dzisiejsze wypieki!</em></p>
     </div>
 </section>
 
-<section id="opinie" class="section reviews">
-    <h2 style="color: white;">Co mówią nasi Goście?</h2>
-    <div class="review-text">
-        "Niesamowity klimat i najlepsza obsługa w Warszawie. Kawa zawsze idealna, a śniadania sprawiają, że dzień staje się lepszy!"
+<section class="section">
+    <div class="instagram-box">
+        <h2>Zajrzyj do nas na Instagram!</h2>
+        <p>Śledź nasze codzienne relacje, nowości w menu i poczuj klimat Perły jeszcze przed wejściem.</p>
+        <a href="TUTAJ_WKLEJ_LINK_DO_INSTAGRAMA" target="_blank" class="btn-insta">Obserwuj @perlacoffee</a>
     </div>
-    <p>— Opinia z Google Maps ★★★★★</p>
 </section>
 
 <section id="kontakt" class="section">
-    <h2>Zapraszamy na Sulejkowską!</h2>
-    <div class="card" style="text-align: center;">
-        <p><strong>Adres:</strong> ul. Sulejkowska 56/58, 04-157 Warszawa</p>
-        <p><strong>Otwarte:</strong> Pn - Pt: 8:00 - 19:00 | Sb - Nd: 9:00 - 19:00</p>
-        
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.116637375176!2d21.093475!3d52.232145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc9d89b8187b%3A0x3434522fad9d1bd7!2sSulejkowska%2056%2F58%2C%2004-157%20Warszawa!5e0!3m2!1spl!2spl!4v1700000000000"></iframe>
+    <h2>Zapraszamy</h2>
+    <div class="card">
+        <p><strong>Sulejkowska 56/58, Warszawa</strong></p>
+        <p>Pn - Pt: 8:00 - 19:00 | Sb - Nd: 9:00 - 19:00</p>
     </div>
 </section>
 
 <footer class="footer">
-    <p>&copy; 2026 Perla Coffee Warszawa. Strona zaprojektowana z pasją.</p>
+    <p>© 2026 Perla Coffee Warszawa</p>
 </footer>
 
 </body>

@@ -168,10 +168,26 @@
             color: white;
         }
 
+        /* TWOJE STYLE DLA SOCIAL MEDIA */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-container a svg circle {
+            transition: fill 0.3s ease;
+        }
+
+        .social-container a:hover svg circle {
+            fill: #5BBEC6;
+        }
+
         /* STYL DLA MUSZLI NA KOŃCU */
         .shell-footer {
             width: 100%;
-            max-width: 500px; /* Maksymalna szerokość na komputerze */
+            max-width: 500px;
             margin: 20px auto 0 auto;
             opacity: 0.9;
             animation: float 5s ease-in-out infinite;
@@ -197,7 +213,6 @@
             .quote-text { font-size: 1.4rem; }
             .nav-links a { margin: 0 8px; font-size: 0.65rem; }
             .floating-logo { max-width: 200px; }
-            /* Muszla na cały ekran na telefonie */
             .shell-footer { 
                 max-width: 100%; 
                 margin: 10px 0 0 0;
@@ -299,14 +314,35 @@
             <p>Otwarte codziennie: 10:00 – 19:00</p>
             
             <div style="margin-top: 30px;">
-                <a href="https://maps.google.com/?cid=9598387070563064631&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" target="_blank" class="btn-ocean">
+                <a href="https://maps.google.com/?q=Sulejkowska+56/58+Warszawa" target="_blank" class="btn-ocean">
                     📍 Nawiguj do kawiarni
                 </a>
             </div>
 
             <div style="margin-top: 40px;">
                 <p>Bądźmy w kontakcie:</p>
-                <a href="https://www.instagram.com/perl.acoffee/" target="_blank" style="color: var(--deep-blue); font-weight: 700; text-decoration: none;">Instagram @perlacoffee</a>
+                <div class="social-container">
+                    <a href="https://www.instagram.com/perl.acoffee/" target="_blank" aria-label="Instagram">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="12" fill="#7ECED3"/>
+                          <path d="M8 12a4 4 0 1 0 8 0a4 4 0 0 0-8 0Z" stroke="white" stroke-width="1.6"/>
+                          <rect x="6.5" y="6.5" width="11" height="11" rx="3" stroke="white" stroke-width="1.6"/>
+                          <circle cx="16.5" cy="7.5" r="0.9" fill="white"/>
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com/perl.acoffee" target="_blank" aria-label="Facebook">
+                        <svg width="40" height="40" viewBox="0 0 24 24">
+                          <circle cx="12" cy="12" r="12" fill="#7ECED3"/>
+                          <path d="M13 8h2V6h-2c-1.7 0-3 1.3-3 3v2H8v2h2v5h2v-5h2l1-2h-3V9c0-.6.4-1 1-1Z" fill="white"/>
+                        </svg>
+                    </a>
+                    <a href="https://tiktok.com/@perl.acoffee" target="_blank" aria-label="TikTok">
+                        <svg width="40" height="40" viewBox="0 0 24 24">
+                          <circle cx="12" cy="12" r="12" fill="#7ECED3"/>
+                          <path d="M14 7v6.3a2.3 2.3 0 1 1-2-2.3V9a4.5 4.5 0 1 0 4 4.5V9.7c.6.4 1.3.6 2 .7V8.5 c-1.2-.2-2.2-.9-2.6-1.5Z" fill="white"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </section>
 

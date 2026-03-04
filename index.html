@@ -15,6 +15,7 @@
             --deep-blue: #263238;
             --accent-cyan: #4dd0e1; /* Główny błękit przycisków */
             --mleczna-biel: rgba(255, 255, 255, 0.75);
+            --perlowy-blask: rgba(255, 255, 255, 0.9);
         }
 
         * { box-sizing: border-box; }
@@ -105,6 +106,15 @@
             text-align: center;
         }
 
+        /* Specjalne wyróżnienie dla Śniadań */
+        .breakfast-highlight {
+            background: var(--perlowy-blask);
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(77, 208, 225, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
         .photo-window {
             padding: 15px;
             line-height: 0;
@@ -168,7 +178,6 @@
             color: white;
         }
 
-        /* TWOJE STYLE DLA SOCIAL MEDIA */
         .social-container {
             display: flex;
             justify-content: center;
@@ -184,7 +193,6 @@
             fill: #5BBEC6;
         }
 
-        /* STYL DLA MUSZLI NA KOŃCU */
         .shell-footer {
             width: 100%;
             max-width: 500px;
@@ -241,8 +249,8 @@
         
         <section id="mysl" class="glass-window">
             <div class="quote-text">
-                „Ja wierzę, że…<br>
-                Ten świat ogromną muszlą jest,<br>
+                „Ja wierzę, że…<br><br>
+                Ten świat ogromną muszlą jest,<br><br>
                 a ja perłą w niej.”
             </div>
             <div class="philosophy-text">
@@ -255,11 +263,27 @@
             <img src="wnetrze.jpeg" alt="Wnętrze Perla Coffee">
         </section>
         <section class="glass-window photo-window">
-            <img src="kawa2.png" alt="Wnętrze Perla Coffee">
+            <img src="kawa2.png" alt="Kawa Perla Coffee">
         </section>
         
         <section id="menu" class="glass-window" style="background: rgba(224, 242, 241, 0.85);">
             <h2>Aksamitna Karta</h2>
+
+            <div class="menu-category breakfast-highlight" style="padding: 20px; border-radius: 20px;">
+                <span class="category-title">🍳 Królewskie Śniadania</span>
+                
+                <div class="menu-item"><span>1. Gofr z oscypkiem i żurawiną</span><span>29 zł</span></div>
+                <span class="item-desc">Gofry, oscypek 80 g, żurawina, rukola, sos balsamiczny.</span>
+
+                <div class="menu-item"><span>2. Gofr wytrawny</span><span>25 zł</span></div>
+                <span class="item-desc">Gofry, camembert, suszone pomidory, rukola, oliwa truflowa.</span>
+
+                <div class="menu-item"><span>3. Tost z cheddarem i jajecznicą</span><span>20 zł</span></div>
+                <span class="item-desc">Tost z cheddarem, szynką i pomidorem, 2 jajka.</span>
+
+                <div class="menu-item"><span>4. Jajecznica z oscypkiem</span><span>29 zł</span></div>
+                <span class="item-desc">2 jajka, oscypek 50 g, ogórek kiszony, szynka, grillowane pieczywo.</span>
+            </div>
 
             <div class="menu-category">
                 <span class="category-title">☕ Kawa</span>
@@ -297,17 +321,12 @@
             </div>
 
             <div class="menu-category">
-                <span class="category-title">🍳 Gofry & Śniadania</span>
-                <div class="menu-item"><span>Gofr z oscypkiem i żurawiną</span><span>29 zł</span></div>
-                <span class="item-desc">Oscypek 80g, żurawina, rukola, balsamico</span>
-                <div class="menu-item"><span>Gofr wytrawny</span><span>29 zł</span></div>
-                <span class="item-desc">Camembert, suszone pomidory, oliwa truflowa</span>
-                <div class="menu-item"><span>Jajecznica z oscypkiem</span><span>29 zł</span></div>
-                <span class="item-desc">2 jajka, oscypek 50g, ogórek kiszony, grillowane pieczywo</span>
+                <span class="category-title">🧇 Słodkie Gofry</span>
                 <div class="menu-item"><span>Słodkie gofry</span><span>10 - 17 zł</span></div>
                 <span class="item-desc">Z owocami, Nutellą lub pistacją i malinami</span>
             </div>
 
+            <br>
             <a href="#kontakt" class="btn-ocean">Gdzie nas znaleźć?</a>
         </section>
 
@@ -317,7 +336,7 @@
             <p>Otwarte codziennie: 10:00 – 19:00</p>
             
             <div style="margin-top: 30px;">
-                <a href="https://maps.app.goo.gl/yyF5hrkAStQagJJp7" target="_blank" class="btn-ocean">
+                <a href="https://maps.google.com" target="_blank" class="btn-ocean">
                     📍 Nawiguj do kawiarni
                 </a>
             </div>

@@ -276,11 +276,89 @@
             html,body { scroll-behavior:auto; }
             *,*::before,*::after { animation:none !important; transition:none !important; }
         }
+
+        /* Widoczne wnętrze kawiarni i oddzielne matowe szyby menu. */
+        body { isolation:isolate; }
+        .fixed-bg {
+            background-image:linear-gradient(rgba(250,244,233,.12),rgba(242,238,226,.20)),url('tłoperla.png');
+            z-index:-2;
+        }
+        .hero-intro,.content-wrapper { position:relative; z-index:1; }
+        .hero-intro h1,.hero-copy,.hero-intro > p:first-of-type {
+            text-shadow:0 1px 12px rgba(255,253,245,.98),0 0 30px rgba(255,253,245,.95);
+        }
+        nav { background:rgba(255,253,248,.76); }
+        .glass-window {
+            background:rgba(255,253,248,.66);
+            backdrop-filter:blur(14px) saturate(110%);
+            -webkit-backdrop-filter:blur(14px) saturate(110%);
+            border:1px solid rgba(255,255,255,.70);
+            box-shadow:0 12px 36px rgba(41,37,29,.12),inset 0 1px 0 rgba(255,255,255,.65);
+        }
+        #menu {
+            background:transparent; border:0; padding:0; box-shadow:none;
+            backdrop-filter:none; -webkit-backdrop-filter:none; overflow:visible;
+        }
+        #menu > h2 {
+            display:table; margin:0 auto 30px; padding:14px 30px;
+            background:rgba(255,253,248,.76); border-radius:20px;
+            backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+            border:1px solid rgba(255,255,255,.75);
+        }
+        #menu .menu-category,#menu .menu-extras {
+            margin:0 0 28px; padding:28px 32px; border-radius:26px;
+            background:rgba(255,253,248,.68);
+            backdrop-filter:blur(14px) saturate(110%);
+            -webkit-backdrop-filter:blur(14px) saturate(110%);
+            border:1px solid rgba(255,255,255,.75);
+            box-shadow:0 12px 36px rgba(41,37,29,.12),inset 0 1px 0 rgba(255,255,255,.65);
+        }
+        #menu .seasonal-highlight { background:rgba(250,234,214,.72); }
+        #menu .breakfast-highlight { background:rgba(235,245,239,.72); }
+        #menu .category-title { margin-top:0; color:#773720; border-color:rgba(119,55,32,.25); }
+        #menu .menu-item { border-color:rgba(68,75,59,.30); }
+        #menu .item-desc { color:#354741; }
+        #kontakt { background:rgba(228,239,235,.72); }
+        .autumn-leaves { position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+        .autumn-leaf {
+            position:absolute; top:-60px; left:var(--left); font-size:var(--size);
+            line-height:1; opacity:0; user-select:none;
+            animation:autumn-fall 28s linear infinite; animation-delay:var(--delay);
+        }
+        @keyframes autumn-fall {
+            0% { opacity:0; transform:translate3d(0,-60px,0) rotate(0deg); }
+            4% { opacity:.70; }
+            17% { transform:translate3d(32px,32vh,0) rotate(90deg); }
+            32% { opacity:.65; transform:translate3d(-24px,70vh,0) rotate(200deg); }
+            46% { opacity:0; transform:translate3d(40px,calc(100vh + 80px),0) rotate(300deg); }
+            100% { opacity:0; transform:translate3d(40px,calc(100vh + 80px),0) rotate(300deg); }
+        }
+        @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+            .glass-window,#menu .menu-category,#menu .menu-extras,#kontakt { background:rgba(255,253,248,.9); }
+        }
+        @media (max-width:600px) {
+            #menu .menu-category,#menu .menu-extras { padding:22px 18px; border-radius:22px; margin-bottom:22px; }
+            #menu > h2 { padding:12px 22px; }
+            .autumn-leaf:nth-child(n+5) { display:none; }
+        }
+        @media (prefers-reduced-motion:reduce) {
+            .autumn-leaves { display:none; }
+            .autumn-leaf { animation:none; }
+        }
     </style>
 </head>
 <body>
 
     <div class="fixed-bg" aria-hidden="true"></div>
+    <div class="autumn-leaves" aria-hidden="true">
+        <span class="autumn-leaf" style="--left:7%;--size:28px;--delay:0s">🍁</span>
+        <span class="autumn-leaf" style="--left:86%;--size:32px;--delay:3s">🍂</span>
+        <span class="autumn-leaf" style="--left:31%;--size:23px;--delay:7s">🍁</span>
+        <span class="autumn-leaf" style="--left:68%;--size:27px;--delay:11s">🍂</span>
+        <span class="autumn-leaf" style="--left:17%;--size:25px;--delay:16s">🍂</span>
+        <span class="autumn-leaf" style="--left:94%;--size:30px;--delay:20s">🍁</span>
+    </div>
+
 
     <header class="hero-intro">
         <img src="Perla_logo.png" alt="Perla Coffee Logo" class="floating-logo">

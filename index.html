@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perla Coffee | Baśniowa Przystań</title>
+    <title>Perla Coffee | Jesień pełna smaku</title>
+    <meta name="description" content="Jesień w Perla Coffee: kawy sezonowe, rozgrzewające napary, matcha i śniadania. Sprawdź menu. Sulejkowska 56/58, Warszawa.">
     
     <link rel="icon" href="flavperla.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -226,18 +227,70 @@
                 margin: 10px 0 0 0;
             }
         }
+
+        /* Jesienna odsłona: perłowy turkus z akcentami cynamonu. */
+        :root { --deep-blue:#293b3a; --accent-cyan:#8c4329; --ocean-blue:#d7c6b1; --mleczna-biel:rgba(255,253,248,.95); --perlowy-blask:#f3f8f5; }
+        body { background:#f4eee4; line-height:1.65; }
+        .fixed-bg { background-image:linear-gradient(rgba(248,239,225,.67),rgba(231,241,236,.86)),url('tłoperla.png'); }
+        .hero-intro { min-height:640px; height:90svh; padding:40px 20px; }
+        .hero-intro h1 { font-family:'Playfair Display',serif; font-size:clamp(2.5rem,6vw,4.7rem); font-weight:600; line-height:1.12; margin:20px 0 14px; color:#6f3625; }
+        .hero-intro .floating-logo { max-width:220px; animation:none; }
+        .hero-intro > p:first-of-type { color:#593b2d; font-weight:500 !important; font-size:.875rem !important; letter-spacing:2px !important; }
+        .hero-copy { max-width:460px; margin:0 0 28px; }
+        nav { background:rgba(255,253,248,.96); padding:12px; }
+        .nav-links { display:flex; justify-content:center; flex-wrap:wrap; gap:6px; }
+        .nav-links a { font-size:.875rem; letter-spacing:1px; margin:0; padding:10px 18px; }
+        a:focus-visible { outline:3px solid #245a57; outline-offset:5px; }
+        section[id] { scroll-margin-top:90px; }
+        .glass-window { border-color:#e7d9c7; margin-bottom:40px; border-radius:28px; }
+        #menu { background:#fffdf8; }
+        #kontakt { background:#e4efeb; }
+        h2 { font-size:2.2rem; }
+        .quote-text { color:#8c4329; }
+        .category-title { font-size:1.5rem; line-height:1.3; padding-bottom:12px; font-weight:600; }
+        .menu-category { margin-bottom:38px; }
+        .menu-item { gap:18px; padding:9px 0; margin:0; align-items:baseline; }
+        .menu-item > span:first-child { min-width:0; }
+        .item-price { flex-shrink:0; white-space:nowrap; }
+        .item-desc { font-size:.875rem; color:#52605b; font-weight:400; margin:8px 0 16px; }
+        .seasonal-highlight { background:#f7e8d9; border:1px solid #c99a70; padding:24px; border-radius:18px; }
+        .breakfast-highlight { padding:24px; border:1px solid #adc8bf; border-radius:18px; box-shadow:none; }
+        .menu-extras { padding:12px 20px; background:#eef4f0; border-radius:14px; text-align:left; font-size:.875rem; }
+        .menu-extras p { display:flex; justify-content:space-between; gap:16px; }
+        .btn-ocean { box-shadow:0 6px 18px rgba(99,53,29,.15); }
+        .btn-ocean:hover { background:#6f3625; transform:translateY(-2px); }
+        .social-container a { display:grid; place-items:center; min-width:48px; min-height:48px; }
+        .social-container a svg circle { fill:#34716d; }
+        .social-container a:hover svg circle { fill:#8c4329; }
+        footer { font-size:.875rem; padding:24px 16px; }
+        @media (max-width:600px) {
+            .hero-intro { min-height:590px; height:auto; padding:55px 20px; }
+            .glass-window { padding:28px 18px; }
+            .nav-links a { font-size:.875rem; margin:0; padding:10px 16px; }
+            .seasonal-highlight,.breakfast-highlight { padding:18px 14px; }
+            .menu-item { gap:12px; }
+            .photo-window { padding:10px; }
+            h2 { font-size:1.9rem; }
+        }
+        @media (prefers-reduced-motion:reduce) {
+            html,body { scroll-behavior:auto; }
+            *,*::before,*::after { animation:none !important; transition:none !important; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="fixed-bg"></div>
+    <div class="fixed-bg" aria-hidden="true"></div>
 
     <header class="hero-intro">
         <img src="Perla_logo.png" alt="Perla Coffee Logo" class="floating-logo">
-        <p style="margin-top: 20px; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem;">Przewiń, by odkryć perłę</p>
+        <p style="margin-top: 20px; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem;">Jesień w Perla Coffee</p>
+        <h1>Jesień pełna smaku.</h1>
+        <p class="hero-copy">Dyniowa kawa, korzenne napary i chwila tylko dla Ciebie.</p>
+        <a href="#menu" class="btn-ocean">Odkryj jesienne menu</a>
     </header>
 
-    <nav>
+    <nav aria-label="Nawigacja główna">
         <div class="nav-links">
             <a href="#mysl">O nas</a>
             <a href="#menu">Karta</a>
@@ -245,7 +298,7 @@
         </div>
     </nav>
 
-    <div class="content-wrapper">
+    <main class="content-wrapper">
         
         <section id="mysl" class="glass-window">
             <div class="quote-text">
@@ -254,7 +307,7 @@
                 a ja perłą w niej.”
             </div>
             <div class="philosophy-text">
-                <p>Mała przestrzeń pełna wielkiego uroku, schowana jak perła, którą odkrywa się powoli. Zapraszamy na poranną kawę, która budzi zmysły, i popołudniowe rozmowy, które nie chcą się kończyć ☕🩵</p>
+                <p>Mała przestrzeń pełna wielkiego uroku, schowana jak perła, którą odkrywa się powoli. Tej jesieni zapraszamy na aromatyczną kawę, rozgrzewający napar i popołudniowe rozmowy, które nie chcą się kończyć.</p>
                 <p>Tu czas zwalnia bez wysiłku. Każda przerwa staje się małym rytuałem przyjemności, do którego chce się wracać.</p>
             </div>
         </section>
@@ -266,79 +319,30 @@
             <img src="kawa2.png" alt="Kawa Perla Coffee">
         </section>
         
-        <section id="menu" class="glass-window" style="background: rgba(224, 242, 241, 0.85);">
-            <h2>Aksamitna Karta</h2>
-<div class="menu-category">
-                <span class="category-title">🍦 Lody Rzemieślnicze</span>
-                <div class="menu-item"><span>Dzisiejsze smaki</span><span>8 zł / porcja dziecięca 5 zł</span></div>
-                <span class="item-desc">Nasze smaki zmieniają się tak często, że nie sposób ich spisać. Każdego dnia odkryjesz u nas coś nowego – zapytaj obsługę o aktualne propozycje!</span>
-                <div class="menu-item"><span>Lody bezcukrowe</span><span></span></div>
-                <span class="item-desc">Ważna informacja: w naszej ofercie znajdziesz również pyszne lody bezcukrowe.</span>
-            </div>
-            <div class="menu-category breakfast-highlight" style="padding: 20px; border-radius: 20px;">
-                <span class="category-title">🍳 Królewskie Śniadania do 15:00</span>
-                
-                <div class="menu-item"><span>1. Owsianka</span><span>25 zł</span></div>
-                <span class="item-desc">Płatki owsiane, Mleko owsiane, Miód, Do wyboru dodatki: Nutella / Masło orzechowe, Banan, Borówki, Maliny, Orzechy laskowe.</span>
-
-                <div class="menu-item"><span>2. Jajecznica</span><span>25 zł</span></div>
-                <span class="item-desc">3 jajka, Masło, Szynka, Grzanka, Ser.</span>
-
-                <div class="menu-item"><span>3. Gofr wytrawny</span><span>25 zł</span></div>
-                <span class="item-desc">Camembert, Suszone pomidory, Rukola, Oliwa truflowa.</span>
-
-                <div class="menu-item"><span>4. Tost z cheddarem</span><span>29 zł</span></div>
-                <span class="item-desc">Tost z cheddarem, Szynka, Pomidor, Jajecznica z 2 jaj na maśle.</span>
-            </div>
-
-            <div class="menu-category">
-                <span class="category-title">☕ Kawa</span>
-                <div class="menu-item"><span>Espresso</span><span>8 zł</span></div>
-                <div class="menu-item"><span>Doppio / Americano</span><span>12 zł</span></div>
-                <div class="menu-item"><span>Cappuccino</span><span>14 zł</span></div>
-                <div class="menu-item"><span>Flat white / Latte małe</span><span>16 zł</span></div>
-                <div class="menu-item"><span>Latte duże</span><span>19 zł</span></div>
-                <div class="menu-item"><span>Art Latte Smakowe</span><span>21 zł</span></div>
-                <span class="item-desc">Pistacja, Karmel, Orzech, Kokos</span>
-            </div>
-
-            <div class="menu-category">
-                <span class="category-title">🍵 Matcha</span>
-                <div class="menu-item"><span>Perła firmowa</span><span>26 zł</span></div>
-                <div class="menu-item"><span>Klasyczna</span><span>21 zł</span></div>
-                <div class="menu-item"><span>Czerwona porzeczka</span><span>24 zł</span></div>
-                <div class="menu-item"><span>Marakuja</span><span>24 zł</span></div>
-                <div class="menu-item"><span>Malina</span><span>24 zł</span></div>
-                <div class="menu-item"><span>Mango</span><span>24 zł</span></div>
-                <div class="menu-item"><span>Tonic-Marakuja</span><span>25 zł</span></div>
-                <div class="menu-item"><span>Orange</span><span>22 zł</span></div>
-            </div>
-
-            <div class="menu-category">
-                <span class="category-title">🧃 Świeże Soki (18 zł)</span>
-                <div class="menu-item"><span>Ariel / Florek</span><span></span></div>
-                <span class="item-desc">Ariel (Pomarańcza, Grejpfrut), Florek (Pomarańcza, Jabłko)</span>
-                <div class="menu-item"><span>Tryton / Ocean</span><span></span></div>
-                <span class="item-desc">Tryton (Pomarańcza), Ocean (Grejpfrut, Jabłko, Marchew)</span>
-            </div>
-
-            <div class="menu-category">
-                <span class="category-title">🧇 Słodkie Gofry</span>
-                <div class="menu-item"><span>Słodkie gofry</span><span>10 - 17 zł</span></div>
-                <span class="item-desc">Z owocami, Nutellą lub pistacją i malinami</span>
-            </div>
-
-            <br>
+        <section id="menu" class="glass-window" >
+            <h2>Jesienna karta</h2>
+<div class="menu-category seasonal-highlight"><h3 class="category-title">Kawy na jesień</h3><div class="menu-item"><span>Dyniowa Perla</span><span class="item-price">24 zł</span></div><div class="menu-item"><span>Biała czekolada i cynamon</span><span class="item-price">21 zł</span></div><div class="menu-item"><span>Szarlotkowe latte</span><span class="item-price">22 zł</span></div><div class="menu-item"><span>Czekoladowa jesień</span><span class="item-price">21 zł</span></div><div class="menu-item"><span>Espresso z miodem i cynamonem</span><span class="item-price">15 zł</span></div><div class="menu-item"><span>Espresso orzechowe</span><span class="item-price">15 zł</span></div></div>
+<div class="menu-category "><h3 class="category-title">Rozgrzewające napary</h3><div class="menu-item"><span>Imbirowy</span><span class="item-price">18 zł</span></div><div class="menu-item"><span>Jabłko – cynamon</span><span class="item-price">18 zł</span></div><div class="menu-item"><span>Śliwka z anyżem</span><span class="item-price">18 zł</span></div><div class="menu-item"><span>Malina – pomarańcza</span><span class="item-price">18 zł</span></div><div class="menu-item"><span>Marakuja, jabłko, goździki</span><span class="item-price">18 zł</span></div><div class="menu-item"><span>Herbata zimowa</span><span class="item-price">18 zł</span></div></div>
+<div class="menu-category "><h3 class="category-title">Sezonowa matcha</h3><div class="menu-item"><span>Klonowa</span><span class="item-price">22 zł</span></div><div class="menu-item"><span>Pumpkin Spice</span><span class="item-price">25 zł</span></div><div class="menu-item"><span>Czekolada / biała czekolada</span><span class="item-price">24 zł</span></div><div class="menu-item"><span>Miód – cynamon</span><span class="item-price">22 zł</span></div></div>
+<div class="menu-category "><h3 class="category-title">Gorąca czekolada</h3><div class="menu-item"><span>Belgijska</span><span class="item-price">21 zł</span></div><div class="menu-item"><span>Słony karmel</span><span class="item-price">21 zł</span></div></div>
+<div class="menu-category breakfast-highlight"><h3 class="category-title">Śniadania do 15:00</h3><div class="menu-item"><span>Owsianka</span><span class="item-price">25 zł</span></div><span class="item-desc">Płatki owsiane, mleko owsiane, miód. Do wyboru: Nutella / masło orzechowe, banan, borówki, maliny, orzechy laskowe.</span><div class="menu-item"><span>Jajecznica</span><span class="item-price">25 zł</span></div><span class="item-desc">3 jajka, masło, szynka, grzanka, ser.</span><div class="menu-item"><span>Gofr wytrawny</span><span class="item-price">25 zł</span></div><span class="item-desc">Camembert, suszone pomidory, rukola, oliwa truflowa.</span><div class="menu-item"><span>Tost z cheddarem</span><span class="item-price">29 zł</span></div><span class="item-desc">Tost z cheddarem, szynką i pomidorem, jajecznica z 2 jaj na maśle.</span></div>
+<div class="menu-category "><h3 class="category-title">Kawa</h3><div class="menu-item"><span>Espresso</span><span class="item-price">8 zł</span></div><div class="menu-item"><span>Doppio</span><span class="item-price">12 zł</span></div><div class="menu-item"><span>Americano</span><span class="item-price">12 zł</span></div><div class="menu-item"><span>Cappuccino</span><span class="item-price">14 zł</span></div><div class="menu-item"><span>Flat white</span><span class="item-price">16 zł</span></div><div class="menu-item"><span>Latte małe</span><span class="item-price">16 zł</span></div><div class="menu-item"><span>Latte duże</span><span class="item-price">19 zł</span></div></div>
+<div class="menu-category "><h3 class="category-title">Art latte</h3><div class="menu-item"><span>Latte pistacja</span><span class="item-price">21 zł</span></div><div class="menu-item"><span>Latte karmel</span><span class="item-price">21 zł</span></div><div class="menu-item"><span>Latte orzech</span><span class="item-price">21 zł</span></div><div class="menu-item"><span>Latte kokos</span><span class="item-price">21 zł</span></div></div>
+<div class="menu-category "><h3 class="category-title">Dla dzieci</h3><div class="menu-item"><span>Babyccino</span><span class="item-price">10 zł</span></div><div class="menu-item"><span>Kakao z piankami</span><span class="item-price">18 zł</span></div></div>
+<div class="menu-category "><h3 class="category-title">Świeże soki</h3><div class="menu-item"><span>Ariel</span><span class="item-price">18 zł</span></div><span class="item-desc">Jabłko, pomarańcza, grejpfrut.</span><div class="menu-item"><span>Florek</span><span class="item-price">18 zł</span></div><span class="item-desc">Marchew, jabłko.</span><div class="menu-item"><span>Tryton</span><span class="item-price">18 zł</span></div><span class="item-desc">Seler, jabłko, pomarańcza.</span><div class="menu-item"><span>Ocean</span><span class="item-price">18 zł</span></div><span class="item-desc">Ogórek, jabłko, limonka.</span></div>
+<div class="menu-category "><h3 class="category-title">Słodkie gofry</h3><div class="menu-item"><span>Z cukrem pudrem</span><span class="item-price">10 zł</span></div><div class="menu-item"><span>Z bitą śmietaną i owocami</span><span class="item-price">14 zł</span></div><div class="menu-item"><span>Z Nutellą i bananami</span><span class="item-price">17 zł</span></div><div class="menu-item"><span>Z pistacją i malinami</span><span class="item-price">17 zł</span></div><div class="menu-item"><span>Z prażonymi jabłkami</span><span class="item-price">18 zł</span></div><div class="menu-item"><span>Z bitą śmietaną i piankami</span><span class="item-price">17 zł</span></div></div>
+<div class="menu-category"><h3 class="category-title">Lemoniady</h3><p>Marakuja · Malina · Truskawka · Pigwa · Brzoskwinia bez cukru</p><p class="item-desc">O cenę zapytaj obsługę.</p></div>
+<div class="menu-extras"><p>Mleko roślinne <strong>+1 zł</strong></p><p>Opakowanie / kubeczek na wynos <strong>+1 zł</strong></p></div>            <br>
             <a href="#kontakt" class="btn-ocean">Gdzie nas znaleźć?</a>
         </section>
 
-        <section id="kontakt" class="glass-window" style="background: rgba(178, 235, 242, 0.8);">
+        <section id="kontakt" class="glass-window" >
             <h2>Nasza Przystań</h2>
             <p><strong>ul. Sulejkowska 56/58, Warszawa</strong></p>
             <p>Otwarte codziennie: 10:00 – 19:00</p>
             
             <div style="margin-top: 30px;">
-                <a href="https://maps.app.goo.gl/aaVJfg8gds91CoUU9" target="_blank" class="btn-ocean">
+                <a href="https://maps.app.goo.gl/aaVJfg8gds91CoUU9" target="_blank" rel="noopener noreferrer" class="btn-ocean">
                     📍 Nawiguj do kawiarni
                 </a>
             </div>
@@ -346,7 +350,7 @@
             <div style="margin-top: 40px;">
                 <p>Bądźmy w kontakcie:</p>
                 <div class="social-container">
-                    <a href="https://www.instagram.com/perl.acoffee/" target="_blank" aria-label="Instagram">
+                    <a href="https://www.instagram.com/perl.acoffee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                           <circle cx="12" cy="12" r="12" fill="#7ECED3"/>
                           <path d="M8 12a4 4 0 1 0 8 0a4 4 0 0 0-8 0Z" stroke="white" stroke-width="1.6"/>
@@ -354,13 +358,13 @@
                           <circle cx="16.5" cy="7.5" r="0.9" fill="white"/>
                         </svg>
                     </a>
-                    <a href="https://www.facebook.com/profile.php?id=61572627180890" target="_blank" aria-label="Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=61572627180890" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <svg width="40" height="40" viewBox="0 0 24 24">
                           <circle cx="12" cy="12" r="12" fill="#7ECED3"/>
                           <path d="M13 8h2V6h-2c-1.7 0-3 1.3-3 3v2H8v2h2v5h2v-5h2l1-2h-3V9c0-.6.4-1 1-1Z" fill="white"/>
                         </svg>
                     </a>
-                    <a href="https://www.tiktok.com/@perla.coffee" target="_blank" aria-label="TikTok">
+                    <a href="https://www.tiktok.com/@perla.coffee" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
                         <svg width="40" height="40" viewBox="0 0 24 24">
                           <circle cx="12" cy="12" r="12" fill="#7ECED3"/>
                           <path d="M14 7v6.3a2.3 2.3 0 1 1-2-2.3V9a4.5 4.5 0 1 0 4 4.5V9.7c.6.4 1.3.6 2 .7V8.5 c-1.2-.2-2.2-.9-2.6-1.5Z" fill="white"/>
@@ -378,7 +382,7 @@
             <p>© 2026 Perla Coffee | Magia na Pradze</p>
         </footer>
 
-    </div>
+    </main>
 
 </body>
 </html>
